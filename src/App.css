@@ -1,38 +1,98 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40% 60%;
+  height: 100vh;
+  width: 100vw;
+}
+
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-gap: 5px;
+  margin: 5px;
+}
+
+.color-container {
+  width: 100%;
+  height: 100%;
+}
+
+div[class^="color-container"]:hover, .add-button:hover {
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,.3);
+}
+
+.color-input {
+  border-style: none; 
+  outline-style: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: black;
+  /*padding: 1px;*/
+}
+
+.add-button {
+  height: 100%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: black;
   color: white;
+  outline: none;
+  border: none;
+  width:100%;
 }
 
-.App-link {
-  color: #61dafb;
+/*
+.board-container {
+  background-color: #61dafb; 
+}
+*/
+
+.canvas-container {
+  height: 40%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (orientation: landscape) {
+  .app-container {
+    grid-template-columns: 45% 55%;
+    grid-template-rows: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .canvas-container {
+    width: 45%;
+    height: 100%;
   }
+}
+
+.canvas-button {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 15px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.canvas-button:hover {
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,.3);
 }
